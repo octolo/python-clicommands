@@ -4,8 +4,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
 from clicommands.helpers import (
     _get_package_name_from_path,
     discover_commands,

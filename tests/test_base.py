@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
-
 from clicommands.commands.base import Command
 
 

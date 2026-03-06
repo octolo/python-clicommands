@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from clicommands.commands.copy import _copy_command, _COPY_PY
+from clicommands.commands.copy import _copy_command
 
 
 class TestCopyCommand:

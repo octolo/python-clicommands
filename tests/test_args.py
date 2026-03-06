@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
-
 from clicommands.commands.args import classify_args, create_parser_from_config, parse_args_from_config
 
 
