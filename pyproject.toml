@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clicommands"
+version = "0.1.0"
+description = "Lightweight CLI framework for Python projects with automatic command discovery"
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  {name = "Octolo", email = "dev@octolo.tech"}
+]
+keywords = [
+  "client",
+  "command",
+  "shell",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "tabulate>=0.9.0",
+]
+
+[project.scripts]
+clicommands = "clicommands.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/octolo/python-clicommands"
+Repository = "https://github.com/octolo/python-clicommands"
+Documentation = "https://github.com/octolo/python-clicommands#readme"
+Issues = "https://github.com/octolo/python-clicommands/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+clicommands = ["templates/*.py"]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra -v"
+
