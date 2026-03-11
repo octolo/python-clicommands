@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "clicommands"
-version = "0.1.0"
+version = "0.1.1"
 description = "Lightweight CLI framework for Python projects with automatic command discovery"
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
