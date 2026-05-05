@@ -4,28 +4,21 @@
 from __future__ import annotations
 
 import sys
+from collections.abc import Callable, Sequence
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TypedDict
 
-if TYPE_CHECKING:
-    from collections.abc import Callable, Sequence
-    from typing import NotRequired, TypedDict
+try:
+    from typing import NotRequired
+except ImportError:
+    from typing_extensions import NotRequired
 
-    class CommandInfo(TypedDict):
-        """Command func + description."""
+class CommandInfo(TypedDict):
+    """Command func + description."""
 
-        func: Callable[[list[str]], bool]
-        description: str
-        inherit: NotRequired[bool]
-else:
-    from typing import NotRequired, TypedDict
-
-    class CommandInfo(TypedDict):
-        """Command func + description."""
-
-        func: Callable[[list[str]], bool]
-        description: str
-        inherit: NotRequired[bool]
+    func: Callable[[list[str]], bool]
+    description: str
+    inherit: NotRequired[bool]
 
 
 _CLI_CONTEXT: dict[str, Path | None] = {"cli_file_path": None}  # CLI context
