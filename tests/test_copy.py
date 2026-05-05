@@ -31,13 +31,13 @@ class TestCopyCommand:
     def test_copy_django(self, tmp_path: Path) -> None:
         result = _copy_command(["django", str(tmp_path)])
         assert result is True
-        dest = tmp_path / "django.py"
+        dest = tmp_path / "manage.py"
         assert dest.exists()
 
     def test_copy_django_ngrok(self, tmp_path: Path) -> None:
         result = _copy_command(["django_ngrok", str(tmp_path)])
         assert result is True
-        dest = tmp_path / "django.py"
+        dest = tmp_path / "manage.py"
         assert dest.exists()
         content = dest.read_text()
         assert "ngrok" in content
