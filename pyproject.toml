@@ -7,7 +7,7 @@ name = "clicommands"
 version = "0.1.1"
 description = "Lightweight CLI framework for Python projects with automatic command discovery"
 readme = "README.md"
-requires-python = ">=3.12,<4.0"
+requires-python = ">=3.10,<4.0"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [
@@ -29,6 +29,7 @@ classifiers = [
 ]
 dependencies = [
     "tabulate>=0.9.0",
+    "typing-extensions>=4.0; python_version < '3.11'",
 ]
 
 [project.scripts]
@@ -53,4 +54,3 @@ test = ["pytest>=8.0"]
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-ra -v"
-
